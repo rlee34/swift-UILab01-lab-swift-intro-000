@@ -24,8 +24,21 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        print(sender.selectedSegmentIndex)
+        if let segmentString = sender.titleForSegment(at: sender.selectedSegmentIndex) {
         
+            switch segmentString.lowercased() {
+            case "red":
+                lightBulb.backgroundColor = UIColor.red
+            case "yellow":
+                lightBulb.backgroundColor = UIColor.yellow
+            case "blue":
+                lightBulb.backgroundColor = UIColor.blue
+            case "green":
+                lightBulb.backgroundColor = UIColor.green
+            default:
+                print("Something went wrong!")
+            }
+        }
     }
     
     
